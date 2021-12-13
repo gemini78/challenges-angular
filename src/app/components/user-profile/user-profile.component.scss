@@ -1,0 +1,52 @@
+.contact {
+  $box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+  $light-color: white;
+  $light-grey: grey;
+  $background_color1: #F7F7F7;
+  $background_color2: #EEEFEF;
+
+  width: 30rem;
+  height: auto;
+  background-color: $light-color;
+  border-radius: 3px;
+  border: 2px solid $light-grey;
+  box-shadow: $box-shadow;
+
+  .contact__image {
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .contact__body {
+    padding: 1rem;
+    background-color: $light-color;
+
+    .lastname,
+    .firstname {
+      font-size: 1.5rem;
+      font-weight: bolder;
+    }
+
+    .age {
+      font-size: 1.5rem;
+    }
+  }
+
+  .contact__action {
+    height: 3rem;
+
+    &.toggle {
+      background-color: $background_color1;
+      padding: 2rem 1rem;
+
+      button {
+        background-color: $background_color2;
+        padding: 1rem;
+      }
+    }
+  }
+}
