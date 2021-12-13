@@ -5,9 +5,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BoxComponent } from './components/box/box.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 @NgModule({
-  declarations: [AppComponent, BoxComponent],
+  declarations: [AppComponent, BoxComponent, UserProfileComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
