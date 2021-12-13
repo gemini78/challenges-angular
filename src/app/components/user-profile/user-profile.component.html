@@ -1,0 +1,21 @@
+<div class="contact">
+  <div class="contact__image">
+    <img [src]="User.photo" alt="image'user" />
+  </div>
+  <div class="contact__body">
+    <div class="civil_status">
+      <div class="lastname">Nom: {{ User.name }}</div>
+      <div class="firstname">Prénom: {{ User.firstName }}</div>
+      <div *ngIf="statusShowAgeUser" class="age">Age: {{ User.age }} years</div>
+    </div>
+    <div class="contact__citation_show">
+      <p>{{ User.quote }}</p>
+    </div>
+    <div class="contact__action citation">
+      <input [(ngModel)]="User.quote" />
+    </div>
+  </div>
+  <div class="contact__action toggle">
+    <button (click)="showHideAgeuse()">Afficher/Masquer mon âge</button>
+  </div>
+</div>
