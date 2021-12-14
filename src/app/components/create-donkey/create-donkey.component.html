@@ -1,1 +1,68 @@
-<p>create-donkey works!</p>
+<div class="row">
+  <h1 class="display-1">ajouter un donkey</h1>
+  <div class="col-md-6">
+    <form #addDonkeyForm="ngForm">
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="inputName"
+          placeholder="le nom du donkey"
+          name="inputName"
+          required
+          [(ngModel)]="donkey.name"
+        />
+        <label for="inputName">Nom</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="inputOrigin"
+          placeholder="l'origine du donkey"
+          name="inputOrigin"
+          required
+          [(ngModel)]="donkey.origin"
+        />
+        <label for="inputOrigin">Origine</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input
+          type="date"
+          class="form-control"
+          id="inputDate"
+          name="inputDate"
+          required
+          [(ngModel)]="donkey.birthDate"
+        />
+        <label for="inputDate">Date de naissance</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="inputImage"
+          name="inputImage"
+          required
+          [(ngModel)]="donkey.pathImage"
+        />
+        <label for="inputImage">Url de l'image</label>
+      </div>
+      <button
+        type="button"
+        [disabled]="!addDonkeyForm.valid"
+        [ngClass]="{
+          'btn-success': addDonkeyForm.valid,
+          'btn-danger': !addDonkeyForm.valid
+        }"
+        class="btn lg"
+        (click)="onSubmit()"
+      >
+        Ajouter
+      </button>
+    </form>
+  </div>
+</div>
