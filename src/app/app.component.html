@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Donkey</a>
+    <a class="navbar-brand" [routerLink]="['/']">Donkey</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -15,14 +15,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" href="/">Home</a>
+          <a class="nav-link active" [routerLink]="['']">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/create">CreateDonkey</a>
+          <a class="nav-link" [routerLink]="['/create']">CreateDonkey</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
-<app-list-donkey></app-list-donkey>
 <router-outlet></router-outlet>
