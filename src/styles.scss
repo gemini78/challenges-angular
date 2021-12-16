@@ -1,1 +1,115 @@
 /* You can add global styles to this file, and also import other style files */
+
+ $dark-orange : #E8351E;
+$light-grey : #FAF8F8;
+$dark-grey : #CCC;
+$white-color : #FFF;
+$soft-dark: #5E5E5E;
+$soft-blue: #4CA6C8;
+$ligth-coral: #ff7f50;
+$ligth-exodus: #5E5E5E;
+
+body {
+    margin: 0;
+    padding: 0;
+    background: $light-grey;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: $soft-dark;
+    font-size: 1.7rem;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+.container-cards {
+  margin: 0 auto;
+
+  .card {
+    background-color: $white-color;
+    border-radius: .5rem;
+    box-shadow: 0 0 1.5rem $dark-grey;
+    margin-bottom: 1rem;
+
+    .card-header {
+      background-color: $ligth-exodus;
+      border-radius: .5rem .5rem 0 0;
+      padding: 1rem;
+      color: $white-color;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .card-body {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+
+        .box-input {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          margin-bottom: .8rem;
+
+          label {
+            margin-bottom: .5rem;
+          }
+
+          input {
+            height: 1.5rem;
+          }
+
+          .errors {
+            margin-top: .2rem;
+            background-color: rgba($color: #FF0000, $alpha: .4);
+            color: $white-color;
+            font-size: .9rem;
+            padding: .5rem;
+          }
+        }
+
+        .button {
+          text-align: center;
+
+          button {
+            text-transform: uppercase;
+            padding: .8rem;
+          }
+        }
+
+      }
+    }
+
+    .card-footer {
+      background-color: $ligth-exodus;
+      border-radius: 0 0 7px 7px;
+      padding: 15px;
+      color: $white-color;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  }
+}
