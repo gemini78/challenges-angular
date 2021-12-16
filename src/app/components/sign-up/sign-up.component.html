@@ -3,38 +3,90 @@
     <span>Formulaire d'inscription</span>
   </div>
   <div class="card-body">
-    <form>
+    <form #addUserForm="ngForm" (ngSubmit)="onSubmit(addUserForm)">
       <div class="box-input">
         <label for="lastname">Lastname :</label>
-        <input type="text" id="lastname" name="lastname" />
-        <div class="errors">
-          <div>le nom est requis</div>
-          <div>Le nom doit comporter au moins 3 caractères</div>
-          <div>Le nom ne doit pas dépasser 15 caractères</div>
+        <input
+          type="text"
+          id="lastname"
+          name="lastname"
+          minlength="3"
+          maxlength="15"
+          #lastname="ngModel"
+          required
+          ngModel
+        />
+        <div *ngIf="addUserForm.submitted && lastname.invalid" class="errors">
+          <div *ngIf="addUserForm.submitted && lastname.errors?.['required']">
+            le nom est requis
+          </div>
+          <div *ngIf="addUserForm.submitted && lastname.errors?.['minlength']">
+            Le nom doit comporter au moins 3 caractères
+          </div>
+          <div *ngIf="lastname.errors?.['maxlength']">
+            Le nom ne doit pas dépasser 15 caractères
+          </div>
         </div>
       </div>
       <div class="box-input">
         <label for="firstname">Firstname :</label>
-        <input type="text" id="firstname" name="firstname" />
-        <div class="errors">
-          <div>le prénom est requis</div>
-          <div>Le prénom doit comporter au moins 3 caractères</div>
-          <div>Le prénom ne doit pas dépasser 15 caractères</div>
+        <input
+          type="text"
+          minlength="3"
+          maxlength="15"
+          #firstname="ngModel"
+          id="firstname"
+          name="firstname"
+          [(ngModel)]="user.firstname"
+          required
+          ngModel
+        />
+        <div *ngIf="addUserForm.submitted && firstname.invalid" class="errors">
+          <div *ngIf="addUserForm.submitted && firstname.errors?.['required']">
+            le prénom est requis
+          </div>
+          <div *ngIf="addUserForm.submitted && firstname.errors?.['minlength']">
+            Le prénom doit comporter au moins 3 caractères
+          </div>
+          <div *ngIf="firstname.errors?.['maxlength']">
+            Le prénom ne doit pas dépasser 15 caractères
+          </div>
         </div>
       </div>
       <div class="box-input">
         <label for="email">Email :</label>
-        <input type="email" id="email" name="email" />
-        <div class="errors">
-          <div>l'email est requis</div>
-          <div>l'email est invalide</div>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          #email="ngModel"
+          [pattern]="emailPattern"
+          required
+          ngModel
+        />
+        <div *ngIf="addUserForm.submitted && email.invalid" class="errors">
+          <div *ngIf="addUserForm.submitted && email.errors?.['required']">
+            l'email est requis
+          </div>
+          <div *ngIf="addUserForm.submitted && email.errors?.['pattern']">
+            L'email est invalide
+          </div>
         </div>
       </div>
       <div class="box-input">
         <label for="password">Password :</label>
-        <input type="password" id="password" name="password" />
-        <div class="errors">
-          <div>le mot de passe est requis</div>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          #password="ngModel"
+          required
+          ngModel
+        />
+        <div *ngIf="addUserForm.submitted && password.invalid" class="errors">
+          <div *ngIf="addUserForm.submitted && password.errors?.['required']">
+            le mot de passe est requis
+          </div>
         </div>
       </div>
       <div class="button">
